@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 use App\Models\User;
+use App\Models\Recipe;
 use App\Models\Ingredient;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +14,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Recipe extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title'];
 
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
